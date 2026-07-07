@@ -54,4 +54,5 @@ A full demo of steps 8-11 (keyboard control + monitoring in Gazebo) is available
 - **`A2_cmd_vel` (publisher)**: prints the linear/angular velocity it publishes each time a valid key (W/A/S/D) is pressed, and stops/exits when `Q` is pressed.
 - **`A2_monitor` (subscriber)**: prints each received `Twist` message's `linear.x` and `angular.z` values in a readable format, in real time as commands are published.
 - **Simulator**: the Turtlebot moves forward/backward or rotates left/right in Gazebo, matching the key pressed, and stops when `Q` is pressed.
+- **Motion Mechanism** Pressing W/A/S/D sets a fixed velocity (`±linear_step` or `±angular_step`) instead of accumulating it. A background `threading.Timer` holds that velocity for 3 seconds, then auto-zeroes it. Pressing a new key before the 3 seconds elapse cancels the pending timer and restarts the 3-second hold with the new command.
 - **`rqt_graph`**: shows a graph with `A2_cmd_vel` and `A2_monitor` both connected to the `/cmd_vel` topic.
