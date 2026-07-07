@@ -31,3 +31,5 @@ turtlebot_controller A2_monitor (subscribes to Twist messages on /cmd_vel topic)
 11- to start monitoring turtle bot movements, type $ ros2 run turtlebot_controller A2_monitor
 
 12- to create a dynamic graphical map of your ROS 2 system, open another terminal repeat step #3, then type: $ ros2 run rqt_graph rqt_graph
+
+steps 8 till 11 are demonstrated with robot movement in Gazebo in [DEMO](A2_Demo.mov)
